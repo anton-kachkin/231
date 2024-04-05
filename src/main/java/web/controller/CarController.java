@@ -22,12 +22,4 @@ public class CarController {
         model.addAttribute("cars", cars);
         return "cars";
     }
-
-//    private List<Car> getCarsList(Integer count) {
-//        if (count == null || count >= 5) {
-//            return carService.getCars();
-//        } else {
-//            return carService.getCars(count);
-//        }
-//    }
 }
