@@ -18,13 +18,16 @@ public class CarController {
 
     @GetMapping("/cars")
     public String getCars(@RequestParam(value = "count", required = false) Integer count, Model model) {
-        List<Car> cars;
-        if (count == null || count >= 5) {
-            cars = carService.getCars();
-        } else {
-            cars = carService.getCars(count);
-        }
+        List<Car> cars = carService.getCars(count != null ? count : 5);
         model.addAttribute("cars", cars);
         return "cars";
     }
+
+//    private List<Car> getCarsList(Integer count) {
+//        if (count == null || count >= 5) {
+//            return carService.getCars();
+//        } else {
+//            return carService.getCars(count);
+//        }
+//    }
 }
